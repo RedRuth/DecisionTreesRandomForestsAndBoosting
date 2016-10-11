@@ -12,12 +12,13 @@
 enum workClass{
     PRIVATE,
     SELF_EMPLOYED_NOT_INCLUDED,
-    SELF_EMPLOYED,INC,
-    FEDEREAL_GOV,
+    SELF_EMPLOYED_INC,
+    FEDERAL_GOV,
     LOCAL_GOV,
     STATE_GOV,
     WITHOUT_PAY,
-    NEVER_WORKED
+    NEVER_WORKED,
+    UNKNOWNWC=-1
 };
 
 enum education{
@@ -36,7 +37,8 @@ enum education{
     TENTH,
     DOCTORATE,
     FIFTH_SIXTH,
-    PRESCHOOL
+    PRESCHOOL,
+    UNKNOWNEDU=-1
 };
 
 enum maritalStatus{
@@ -45,8 +47,9 @@ enum maritalStatus{
     NEVER_MARRIED,
     SEPARATED,
     WIDOWED,
-    MARRIED_SPOUCE_ABSENT,
-    MARRIED_AF_SPOUSE
+    MARRIED_SPOUSE_ABSENT,
+    MARRIED_AF_SPOUSE,
+    UNKNOWNMS=-1
 };
 
 enum occupation{
@@ -63,7 +66,8 @@ enum occupation{
     TRANSPORT_MOVING,
     PRIVATE_HOUSE_SERVICE,
     PROTECTIVE_SERVICES,
-    ARMED_FORCES
+    ARMED_FORCES,
+    UNKNOWNO=-1
 };
 
 enum relationship{
@@ -72,8 +76,8 @@ enum relationship{
     HUDBAND,
     NOT_IN_FAMILY,
     OTHER_RELATIVE,
-    UNMARRIED
-    
+    UNMARRIED,
+    UNKNOWNREL=-1
 };
 
 enum race{
@@ -81,12 +85,14 @@ enum race{
     ASIAN_PAC_ISLANDER,
     AMER_INDIAN_ESKIMO,
     OTHER,
-    BLACK
+    BLACK,
+    UNKNOWNRACE=-1
 };
 
 enum sex{
+    FEMALE,
     MALE,
-    FEMALE
+    UNKNOWNSEX=-1
 };
 
 enum nativeCountry{
@@ -130,6 +136,7 @@ enum nativeCountry{
     TRINIDAD_AND_TOBAGO,
     PERU,
     HONG,
-    HOLAND_NETHERLANDS
+    HOLAND_NETHERLANDS,
+    UNKNOWNCOUNTRY=-1
 };
 #endif /* FeatureEnumerations_h */
