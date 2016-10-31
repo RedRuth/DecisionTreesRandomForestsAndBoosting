@@ -27,7 +27,8 @@ DataCleaner::DataCleaner(char filePath[],int examples){
             break;
         int len=strlen(trainingExample);
         
-        if(trainingExample[len-5]=='>')
+        
+        if(trainingExample[len-6]=='>')
             outputVector[counter]=1;
          else
              outputVector[counter]=0;
