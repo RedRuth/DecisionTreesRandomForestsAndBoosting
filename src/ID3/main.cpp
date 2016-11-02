@@ -2,13 +2,13 @@
 #include<fstream>
 
 int main(int argc,char *argv[]){
-    char *pathDataTrain= "../../Data/trainData.txt";
+    char *pathDataTrain= "../../Data/trainDataDic.txt";
     char *pathLabelTrain="../../Data/trainOutput.txt";
+    
     int NumberOfInstances=32561;
     int NumberOfFeatures=14;
-    float Entropy0;
-    Entropy0=createSet(pathDataTrain,pathLabelTrain,NumberOfInstances,NumberOfFeatures);
-    cout<<Entropy0<<endl;
+    DecisionTree dt= DecisionTree(pathDataTrain,pathLabelTrain,NumberOfInstances,NumberOfFeatures);
     
+    cout<< dt.root->entropy;
     return 0;
 }

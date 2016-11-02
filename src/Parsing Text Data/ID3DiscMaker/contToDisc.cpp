@@ -22,7 +22,10 @@ typedef struct{
 }set;
 
 set First,Second;
+
+
 bool compareContiniousVariable(const element &a,const element &b){
+    
     return  a.continiousVariable < b.continiousVariable;
     
 }
@@ -91,8 +94,15 @@ int main(int argc,char *argv[]){
         
         variables.sort(&compareContiniousVariable);
         
-        while(variables.front().continiousVariable == -1)
+        while(variables.front().continiousVariable == -1){
+            totalInstances--;
+            if(variables.front().label==0)
+                totalLess--;
+            else
+                totalGreat--;
             variables.pop_front();
+            
+        }
         
         int prevLabel=variables.front().label;
         int prevValue=variables.front().continiousVariable;
