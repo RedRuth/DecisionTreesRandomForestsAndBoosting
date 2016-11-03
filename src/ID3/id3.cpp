@@ -33,6 +33,7 @@ typedef struct{
     float total; //! Total instances in Set
 }set;
 
+list<int> attribs;
 class Feature{
     
     
@@ -217,21 +218,22 @@ class DecisionTree{
             mostCommonLabel=1;
         
         if(featUsed.size() ==14){
-            cout<<"Predicted "<<mostCommonLabel<<" for path due to lack of attributess: ";
-            for(int instance : featUsed)
-                cout<<instance<<"--->";
-            cout<<endl;
+           // cout<<"Predicted "<<mostCommonLabel<<" for path due to lack of attributess: ";
+            //for(int instance : featUsed)
+              //  cout<<instance<<"--->";
+            //cout<<endl;
             NODE->labelPredict=mostCommonLabel;
             return;
             
         }
         
         int seperateFeat=maxIG(NODE->entropy,NODE->indices,NODE->setSize,NODE->used);
+        
         if(seperateFeat==-1){
-            cout<<"Predicted "<<mostCommonLabel<<" for path due to lack of further IG: ";
-            for(int instance : featUsed)
-                cout<<instance<<"--->";
-            cout<<endl;
+            //cout<<"Predicted "<<mostCommonLabel<<" for path due to lack of further IG: ";
+            //for(int instance : featUsed)
+              //  cout<<instance<<"--->";
+            //cout<<endl;
             NODE->labelPredict=mostCommonLabel;
             return;
         }
@@ -320,18 +322,18 @@ class DecisionTree{
             
             if(base[i].total!=0){
                 if(base[i].class0==0){
-                    cout<<"Predicted one for path : ";
-                    for(int instance : featUsed)
-                        cout<<instance<<"--->";
-                    cout<<endl;
+                 //   cout<<"Predicted 1 for path : ";
+                   // for(int instance : featUsed)
+                     //   cout<<instance<<"--->";
+                    //cout<<endl;
                     NODE->children[i]->labelPredict=1;
 
                     
                 }else if(base[i].class1==0){
-                    cout<<"Predicted zero for path : ";
-                    for(int instance : featUsed)
-                        cout<<instance<<"--->";
-                    cout<<endl;
+               //     cout<<"Predicted 0 for path : ";
+                 //   for(int instance : featUsed)
+                   //     cout<<instance<<"--->";
+                    //cout<<endl;
                     NODE->children[i]->labelPredict=0;
 
                     
@@ -344,10 +346,10 @@ class DecisionTree{
                 
             }
             else{
-                cout<<"Predicted "<<mostCommonLabel<<" for path due to lack of examples: ";
-                for(int instance : featUsed)
-                    cout<<instance<<"--->";
-                cout<<endl;
+             //   cout<<"Predicted "<<mostCommonLabel<<" for path due to lack of examples: ";
+               // for(int instance : featUsed)
+                 //   cout<<instance<<"--->";
+                //cout<<endl;
                 NODE->children[i]->labelPredict=mostCommonLabel;
             }
         }
