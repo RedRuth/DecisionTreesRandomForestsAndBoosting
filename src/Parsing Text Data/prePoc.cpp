@@ -23,6 +23,7 @@ DataCleaner::DataCleaner(char filePath[],int examples){
     int counter=0;
     
     while(fgets(trainingExample,200,inputFile)){
+        
         if(counter==instances)
             break;
         int len=strlen(trainingExample);

@@ -3,7 +3,9 @@
 using namespace std;
 int seperate(int a,int boundary){
     
-    if(a<boundary)
+    if(a==-1)
+        return -1;
+    else if(a<boundary)
         return 0;
     else
         return 1;

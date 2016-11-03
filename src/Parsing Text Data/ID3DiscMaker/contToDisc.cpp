@@ -6,6 +6,7 @@
 using namespace std;
 
 float Entropy=0.552011;
+
 float totalLess=24720;
 float totalGreat=7841;
 float totalInstances=32561;
@@ -139,6 +140,7 @@ int main(int argc,char *argv[]){
                 prevValue=n.continiousVariable;
                 prevLabel=n.label;
                 float IG=InformationGain();
+                
                 if(isnan(IG))
                     IG=0;
                 if(IG>maxIG){
