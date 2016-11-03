@@ -217,12 +217,15 @@ class DecisionTree{
         else
             mostCommonLabel=1;
         
+        NODE->labelPredict=mostCommonLabel;
+
+        
         if(featUsed.size() ==14){
            // cout<<"Predicted "<<mostCommonLabel<<" for path due to lack of attributess: ";
             //for(int instance : featUsed)
               //  cout<<instance<<"--->";
             //cout<<endl;
-            NODE->labelPredict=mostCommonLabel;
+            NODE->dec_feature=-2;
             return;
             
         }
@@ -234,7 +237,7 @@ class DecisionTree{
             //for(int instance : featUsed)
               //  cout<<instance<<"--->";
             //cout<<endl;
-            NODE->labelPredict=mostCommonLabel;
+            NODE->dec_feature=-2;
             return;
         }
         
