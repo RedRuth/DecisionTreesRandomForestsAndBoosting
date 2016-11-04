@@ -36,12 +36,13 @@ int main(int argc,char *argv[]){
         if(temp->dec_feature!=-2){
             for(int i=0;i<featureValues[temp->dec_feature];i++){
                 que.push(temp->children[i]);
-                saveChecker.push(save+1);
+                saveChecker.push(saveC+1);
             }
         }
         
         
     }
+    cout<<endl;
     
     return 0;
 }

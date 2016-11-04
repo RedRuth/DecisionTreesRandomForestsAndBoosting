@@ -251,6 +251,7 @@ class DecisionTree{
         
         
         set base[NumberOfAttribs];
+        
         for(int i=0;i<NumberOfAttribs;i++){
             base[i].total=0;
             base[i].class0=0;
@@ -262,9 +263,6 @@ class DecisionTree{
         
         vector<list<int> > indices(NumberOfAttribs,list<int>(0));
         
-        
-        
-        
         list<int> lis;
         
         for(int i=0;i<NumberOfAttribs;i++){
@@ -272,6 +270,7 @@ class DecisionTree{
         }
         
         list<int> missing;
+        
         for(int instance: *instances){
             
             int Value=Data[instance]->features[seperateFeat];
@@ -330,6 +329,8 @@ class DecisionTree{
                      //   cout<<instance<<"--->";
                     //cout<<endl;
                     NODE->children[i]->labelPredict=1;
+                    NODE->children[i]->dec_feature=-2;
+
 
                     
                 }else if(base[i].class1==0){
@@ -337,13 +338,13 @@ class DecisionTree{
                  //   for(int instance : featUsed)
                    //     cout<<instance<<"--->";
                     //cout<<endl;
+                    NODE->children[i]->dec_feature=-2;
                     NODE->children[i]->labelPredict=0;
 
                     
                 }else{
                 
-                    if(seperateFeat!=-1)
-                        CreateTree(NODE->children[i]);
+                    CreateTree(NODE->children[i]);
                 }
                 
                 
@@ -353,6 +354,7 @@ class DecisionTree{
                // for(int instance : featUsed)
                  //   cout<<instance<<"--->";
                 //cout<<endl;
+                NODE->children[i]->dec_feature=-2;
                 NODE->children[i]->labelPredict=mostCommonLabel;
             }
         }
